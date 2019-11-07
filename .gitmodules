@@ -1,3 +1,6 @@
 [submodule "hash_tables"]
 	path = hash_tables
 	url = https://github.com/cu-swe4s-fall-2019/hash-tables-brgr5525.git
+[submodule "avl_tree"]
+	path = avl_tree
+	url = https://github.com/swe4s/avl_tree.git
