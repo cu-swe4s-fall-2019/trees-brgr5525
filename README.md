@@ -57,7 +57,8 @@ The above data represents structures containing 10000 random key values and sear
 
 When comparing the time it takes to insert all 10000 data points into the data structure, the binary tree was the fastest. It was almost twice as fast as the hash table and both the binary tree and hash table were considerably faster than the AVL tree. This is likely due to the time spent rebalancing the tree after every node insertion.
 All three data structures were fairly comparable when it came to searing for data that already existed within the structure, with the binary tree being just slightly faster and the hash table being the slowest.
-However, when looking for data that did not exist in the structure, the hash table performed the best. The binary tree was just slower than the hash table, but then the AVL tree was almost twice as slow. 
+
+However, when looking for data that did not exist in the structure, the hash table performed the best. The binary tree was just slower than the hash table, but then the AVL tree was almost twice as slow.
 
 
 The searching times change alot when looking at the benchmarking results of the sorted data set.
@@ -79,10 +80,9 @@ Hash Table:
 Time to search for existent keys:     0.00010538101196289062
 Time to search for nonexistent keys:  0.0001327991485595703
 ```
-When searching for data that was in the structure, the hash table can be seen as being twice as fast as both of the tree structures. 
-The hash table was also the best at searching for data that was nonexistent. It was over twice as fast as the AVL tree and both it and the AVL were significantly faster than the binary tree. 
+
+When searching for data that was in the structure, the hash table can be seen as being twice as fast as both of the tree structures.
+The hash table was also the best at searching for data that was nonexistent. It was over twice as fast as the AVL tree and both it and the AVL were significantly faster than the binary tree.
 
 Differences can also be seen in the relative efficiencies when searching for subsets of 100 vs much larger subset of 9000. The general trends seem to stay the same for the different structures. All the benchmarking data can be found in ```benchmarking.txt``` and further tests could be run using ```benchmarking.sh```. Overall, the hash table structure appeared to be the 'best' in the most situations. 
-
-
 
