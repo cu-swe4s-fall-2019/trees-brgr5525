@@ -1,6 +1,3 @@
-import sys
-
-
 class Node:
     def __init__(self, key=None, value=None, left=None, right=None):
         self.key = key
@@ -27,8 +24,7 @@ def insert(root, key, value=None):
                 else:
                     insert(root.right, key, value)
         except TypeError:
-            print('key types must be comparable')
-            sys.exit(1)
+            raise TypeError('Key types must be comparable')
         return root
 
 def search(root, key):
@@ -46,5 +42,6 @@ def search(root, key):
             else:
                 return search(root.right, key)
         except TypeError:
-            print('key types must be comparable')
-            sys.exit(1)
+            raise TypeError('Key types could not be compared')
+
+        return None
