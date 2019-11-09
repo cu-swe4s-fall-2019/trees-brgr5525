@@ -7,25 +7,26 @@ class Node:
 
 
 def insert(root, key, value=None):
-    if root == None:
+    if root is None:
         root = Node(key, value)
         return root
 
     else:
         try:
             if key < root.key:
-                if root.left == None:
+                if root.left is None:
                     root.left = Node(key, value)
                 else:
                     insert(root.left, key, value)
             else:
-                if root.right == None:
+                if root.right is None:
                     root.right = Node(key, value)
                 else:
                     insert(root.right, key, value)
         except TypeError:
             raise TypeError('Key types must be comparable')
         return root
+
 
 def search(root, key):
     try:

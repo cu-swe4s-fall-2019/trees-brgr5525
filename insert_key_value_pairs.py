@@ -2,11 +2,11 @@ import sys
 import time
 import binary_tree as bt
 import argparse
-sys.path.insert(1, "./avl_tree")
-import avl
 sys.path.insert(1, "./hash_tables")
 import hash_tables as ht
 import hash_functions as hf
+sys.path.insert(1, "./avl_tree")
+import avl
 
 
 def main():
@@ -18,8 +18,10 @@ def main():
             keys.append(l.rstrip())
     except FileNotFoundError:
         print('dataset file could not be found')
+        sys.exit(1)
     except Exception:
         print('something went wrong with reading the dataset file')
+        sys.exit(1)
 
     t1 = time.time()
 
@@ -28,25 +30,25 @@ def main():
 
         root = None
         try:
-            #insert
+            # insert
             for i in range(len(keys)):
                 root = bt.insert(root, keys[i])
 
             t2 = time.time()
 
-            #search (in database)
+            # search (in database)
             for i in range(args.data_points):
                 bt.search(root, keys[i])
 
             t3 = time.time()
 
-            #search (not in database)
+            # search (not in database)
             for i in range(args.data_points):
                 # add 's' because the entries were not converted to ints
                 bt.search(root, keys[i]+'s')
 
             t4 = time.time()
-        except:
+        except Exception:
             print('Something went wrong')
             sys.exit(1)
 
@@ -55,24 +57,24 @@ def main():
 
         table = ht.ChainedHash(100000, hf.h_rolling)
         try:
-            #insert
+            # insert
             for i in range(len(keys)):
                 table.add(keys[i], None)
 
             t2 = time.time()
-            #search (in database)
+            # search (in database)
             for i in range(args.data_points):
                 table.search(keys[i])
 
             t3 = time.time()
 
-            #search (not in database)
+            # search (not in database)
             for i in range(args.data_points):
                 # add 's' because the entries were not converted to ints
                 table.search(keys[i]+'s')
 
             t4 = time.time()
-        except:
+        except Exception:
             print('Something went wrong')
             sys.exit(1)
 
@@ -81,25 +83,25 @@ def main():
 
         node = avl.AVL()
         try:
-            #insert
+            # insert
             for i in range(len(keys)):
                 node.insert(keys[i])
 
             t2 = time.time()
 
-            #search (in database)
+            # search (in database)
             for i in range(args.data_points):
                 node.find(keys[i])
 
             t3 = time.time()
 
-            #search (not in database)
+            # search (not in database)
             for i in range(args.data_points):
                 # add 's' because the entries were not converted to ints
                 node.find(keys[i]+'s')
 
             t4 = time.time()
-        except:
+        except Exception:
             print('Something went wrong')
             sys.exit(1)
 
@@ -111,11 +113,9 @@ def main():
     t_search1 = t3-t2
     t_search2 = t4-t3
 
-    print('Time to insert all data: ', t_insert)
-    print('Time to search for existent keys: ', t_search1)
-    print('time to search for nonexistent keys: ', t_search2)
-
-
+    print('Time to insert all data:             ', t_insert)
+    print('Time to search for existent keys:    ', t_search1)
+    print('Time to search for nonexistent keys: ', t_search2)
 
 
 if __name__ == '__main__':
