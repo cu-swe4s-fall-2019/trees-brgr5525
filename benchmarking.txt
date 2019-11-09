@@ -1,0 +1,58 @@
+SORTED DATASET
+
+Binary results for small search
+Time to insert all data:              0.05775904655456543
+Time to search for existent keys:     0.00020503997802734375
+Time to search for nonexistent keys:  0.000885009765625
+Binary results for large search
+Time to insert all data:              0.04680895805358887
+Time to search for existent keys:     0.03692221641540527
+Time to search for nonexistent keys:  0.05013895034790039
+
+Hash results for small search
+Time to insert all data:              0.05181384086608887
+Time to search for existent keys:     0.00010538101196289062
+Time to search for nonexistent keys:  0.0001327991485595703
+Hash results for large search
+Time to insert all data:              0.0505521297454834
+Time to search for existent keys:     0.013776779174804688
+Time to search for nonexistent keys:  0.017515182495117188
+
+AVL results for small search
+Time to insert all data:              0.19159603118896484
+Time to search for existent keys:     0.0002238750457763672
+Time to search for nonexistent keys:  0.0003039836883544922
+AVL results for large search
+Time to insert all data:              0.19407200813293457
+Time to search for existent keys:     0.021561145782470703
+Time to search for nonexistent keys:  0.023692607879638672
+
+
+RANDOM DATASET
+
+Binary results for small search
+Time to insert all data:              0.03439807891845703
+Time to search for existent keys:     0.00012302398681640625
+Time to search for nonexistent keys:  0.0002961158752441406
+Binary results for large search
+Time to insert all data:              0.036705970764160156
+Time to search for existent keys:     0.02624201774597168
+Time to search for nonexistent keys:  0.034235239028930664
+
+Hash results for small search
+Time to insert all data:              0.06449198722839355
+Time to search for existent keys:     0.0001971721649169922
+Time to search for nonexistent keys:  0.00023555755615234375
+Hash results for large search
+Time to insert all data:              0.05614805221557617
+Time to search for existent keys:     0.015446901321411133
+Time to search for nonexistent keys:  0.019433975219726562
+
+AVL results for small search
+Time to insert all data:              0.1697368621826172
+Time to search for existent keys:     0.0001850128173828125
+Time to search for nonexistent keys:  0.00041604042053222656
+AVL results for large search
+Time to insert all data:              0.16426491737365723
+Time to search for existent keys:     0.022111892700195312
+Time to search for nonexistent keys:  0.025442838668823242
