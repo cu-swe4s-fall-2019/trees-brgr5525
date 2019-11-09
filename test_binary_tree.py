@@ -95,6 +95,15 @@ class TestBinaryTree(unittest.TestCase):
 
         self.assertEqual(r, None)
 
+    def test_key_type_error(self):
+        root = bt.insert(None, 'cheese')
+        root = bt.insert(root, 'brie')
+        root = bt.insert(root, 'gouda')
+        root = bt.insert(root, 'cheddar')
+
+        self.assertRaises(TypeError, bt.insert, (root, 5))
+        self.assertRaises(TypeError, bt.search, (root, 5))
+
 
 if __name__ == '__main__':
     unittest.main()
